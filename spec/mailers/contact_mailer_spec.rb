@@ -1,0 +1,27 @@
+describe ContactMailer, type: :mailer do
+  describe '#contact_form_submit' do
+    subject(:mail) do
+      described_class.contact_form_submit(
+        email: 'foo@example.com',
+        message: 'my message'
+      )
+    end
+
+    it "sets the to as ENV['CONTACT_RECIPIENT']" do
+      expect(mail.to).to eq([ENV['CONTACT_RECIPIENT']])
+    end
+
+    it "sets the from as ENV['MAILER_FROM']" do
+      expect(mail.from).to eq([ENV['MAILER_FROM']])
+    end
+
+    it 'sets the subject' do
+      expect(mail.subject).to eq('Contact Form Submitted')
+    end
+
+    it 'puts the email and message in the body' do
+      expect(mail.body).to include('Email: foo@example.com')
+      expect(mail.body).to include('Message: my message')
+    end
+  end
+end
