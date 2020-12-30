@@ -4,7 +4,7 @@ Built with [Ruby on Jets](https://rubyonjets.com).
 
 The goal with this is to provide a serverless endpoint to submit contact forms on static/serverless websites to. It just takes the email/body and sends to the configured email address.
 
-This hasn't been used in a prod situation yet, but has been tested.
+This is WIP.
 
 ## Requirements
 
