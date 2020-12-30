@@ -1,4 +1,4 @@
-# Serverless Contact Form
+# Serverless Contact Form (WIP)
 
 Built with [Ruby on Jets](https://rubyonjets.com).
 
