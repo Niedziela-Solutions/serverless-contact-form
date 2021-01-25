@@ -3,5 +3,4 @@ Jets.application.configure do
   config.mode = 'api'
 
   config.prewarm.enable = true
-  config.domain.route53 = false
 end

@@ -14,4 +14,9 @@ Jets.application.configure do
     password: ENV['SMTP_PASSWORD'],
     enable_starttls_auto: true
   }
+
+  config.cors = true
+  config.domain.cert_arn = ENV['CERT_ARN']
+  config.domain.name = ENV['DOMAIN']
+  config.domain.hosted_zone_name = ENV['HOSTED_ZONE_NAME']
 end
