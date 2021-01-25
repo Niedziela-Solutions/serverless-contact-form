@@ -1,3 +1,3 @@
 Jets.application.routes.draw do
-  resources :contact, only: :create
+  post '/submit', to: 'contact#create'
 end

@@ -1,7 +1,7 @@
 describe ContactController, type: :controller do
   describe 'POST #create' do
     it 'index returns a success response' do
-      post '/contact'
+      post '/submit'
 
       expect(response.status).to eq(200)
     end
@@ -12,7 +12,7 @@ describe ContactController, type: :controller do
         message: 'test'
       ).and_return(double(deliver_now: nil))
 
-      post '/contact', params: { email: 'foo@example.com', message: 'test' }
+      post '/submit', params: { email: 'foo@example.com', message: 'test' }
 
       expect(response.status).to eq(200)
     end
@@ -20,7 +20,7 @@ describe ContactController, type: :controller do
     it 'does not call contact mailer if not email present' do
       expect(ContactMailer).to_not receive(:contact_form_submit)
 
-      post '/contact', params: { email: '', message: 'test' }
+      post '/submit', params: { email: '', message: 'test' }
 
       expect(response.status).to eq(200)
     end
