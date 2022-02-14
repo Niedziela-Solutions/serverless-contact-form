@@ -8,7 +8,7 @@ end
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'puma', '~> 5.5.1'
+  gem 'puma', '~> 5.6.2'
   gem 'rack'
   gem 'shotgun'
 end
