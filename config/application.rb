@@ -3,4 +3,5 @@ Jets.application.configure do
   config.mode = 'api'
 
   config.prewarm.enable = true
+  config.controllers.default_protect_from_forgery = false
 end
