@@ -39,7 +39,15 @@ Example HTML page with form is provided [here](example.html). You can use it loc
 Before deploying in production mode, you will need to setup your production env file. See the [Custom Domain docs on the Ruby on Jets site](https://rubyonjets.com/docs/routing/custom-domain/) for how the domain setup works and [CORS Support](https://rubyonjets.com/docs/cors-support/)
 
 1. `cp .example.env.production .env.production`
-1. Replace the env variables with what you need. Note: [you can also reference SSM Parameter Store secrets](https://rubyonjets.com/docs/env-files/)
+1. Replace the env variables with what you need. Note: [you can also reference SSM Parameter Store secrets](https://rubyonjets.com/docs/env-files/).
+
+```
+DOMAIN=
+HOSTED_ZONE_NAME=
+CERT_ARN=
+```
+
+are needed for custom domain support.
 
 ## Deploying
 
