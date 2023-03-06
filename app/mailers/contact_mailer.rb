@@ -4,7 +4,7 @@ class ContactMailer < ApplicationMailer
     @message = message
 
     mail(
-      to: ENV['CONTACT_RECIPIENT'],
+      to: ENV.fetch('CONTACT_RECIPIENT', nil),
       subject: 'Contact Form Submitted'
     )
   end

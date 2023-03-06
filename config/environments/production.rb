@@ -6,17 +6,17 @@ Jets.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: ENV['SMTP_ADDRESS'],
+    address: ENV.fetch('SMTP_ADDRESS', nil),
     port: 587,
-    domain: ENV['SMTP_DOMAIN'],
+    domain: ENV.fetch('SMTP_DOMAIN', nil),
     authentication: :login,
-    user_name: ENV['SMTP_USER_NAME'],
-    password: ENV['SMTP_PASSWORD'],
+    user_name: ENV.fetch('SMTP_USER_NAME', nil),
+    password: ENV.fetch('SMTP_PASSWORD', nil),
     enable_starttls_auto: true
   }
 
   config.cors = true
-  config.domain.cert_arn = ENV['CERT_ARN']
-  config.domain.name = ENV['DOMAIN']
-  config.domain.hosted_zone_name = ENV['HOSTED_ZONE_NAME']
+  config.domain.cert_arn = ENV.fetch('CERT_ARN', nil)
+  config.domain.name = ENV.fetch('DOMAIN', nil)
+  config.domain.hosted_zone_name = ENV.fetch('HOSTED_ZONE_NAME', nil)
 end
