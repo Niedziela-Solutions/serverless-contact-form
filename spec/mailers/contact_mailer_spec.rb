@@ -8,11 +8,11 @@ describe ContactMailer, type: :mailer do
     end
 
     it "sets the to as ENV['CONTACT_RECIPIENT']" do
-      expect(mail.to).to eq([ENV['CONTACT_RECIPIENT']])
+      expect(mail.to).to eq([ENV.fetch('CONTACT_RECIPIENT', nil)])
     end
 
     it "sets the from as ENV['MAILER_FROM']" do
-      expect(mail.from).to eq([ENV['MAILER_FROM']])
+      expect(mail.from).to eq([ENV.fetch('MAILER_FROM', nil)])
     end
 
     it 'sets the subject' do
