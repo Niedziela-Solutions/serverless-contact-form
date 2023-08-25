@@ -2,8 +2,8 @@ describe ContactMailer, type: :mailer do
   describe '#contact_form_submit' do
     subject(:mail) do
       described_class.contact_form_submit(
-        email: 'foo@example.com',
-        message: 'my message'
+        'foo@example.com',
+        'my message'
       )
     end
 

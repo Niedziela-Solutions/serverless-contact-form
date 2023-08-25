@@ -8,8 +8,8 @@ describe ContactController, type: :controller do
 
     it 'calls contact mailer if email present' do
       expect(ContactMailer).to receive(:contact_form_submit).with(
-        email: 'foo@example.com',
-        message: 'test'
+        'foo@example.com',
+        'test'
       ).and_return(double(deliver_now: nil))
 
       post '/submit', params: { email: 'foo@example.com', message: 'test' }

@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-  def contact_form_submit(email:, message:)
+  def contact_form_submit(email, message)
     @email = email
     @message = message
 
